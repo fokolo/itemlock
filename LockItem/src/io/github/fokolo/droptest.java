@@ -10,8 +10,8 @@ public class droptest implements Listener {
 
 	@EventHandler
 	public void PlayerDropItem(PlayerDropItemEvent event) {
-		//vars
-		Material[] ids = {Material.BOW,Material.ARROW,Material.IRON_SWORD,Material.ENDER_PEARL,Material.DIAMOND_CHESTPLATE};
+		//variables		
+		Material[] ids = lockitem.items;
 		ItemStack item = event.getItemDrop().getItemStack();
 		
 		//check

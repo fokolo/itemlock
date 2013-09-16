@@ -6,31 +6,31 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class inventoryclicks implements Listener{
+public class inventoryclicks implements Listener {
 
 	@EventHandler
 	public void OnInventoryClick(InventoryClickEvent event) {
 
-		//vars
-		Material[] ids = {Material.BOW,Material.ARROW,Material.IRON_SWORD,Material.ENDER_PEARL,Material.DIAMOND_CHESTPLATE};
+		// variables
+		Material[] ids = lockitem.items;
 		ItemStack item = event.getCurrentItem();
-		
-		//check
+
+		// check
 		if (event.getCurrentItem() != null) {
-			for(Material i : ids){
-				if(i==item.getType())
-				{
-					event.setCancelled(true);
-					break;
+			for (Material i : ids) {
+				if (i == item.getType()) {
+					{
+						event.setCancelled(true);
+						break;
+					}
 				}
 			}
-			if(item.getType() == Material.STICK){
-				if(!item.getEnchantments().isEmpty())
-				{
+			if (item.getType() == Material.STICK) {
+				if (!item.getEnchantments().isEmpty()) {
 					event.setCancelled(true);
 				}
 			}
 		}
+
 	}
 }
-
