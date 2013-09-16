@@ -1,0 +1,19 @@
+#This is how to set up your config:
+#<item-number>: //for first number type 0: for second type 1: 
+#  name: <item-name>  //item name see below     NOTE: thw space before the item name is IMPORTANT!!
+# 
+#to get help on item names consult this page for help: http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html
+#space! no tabs
+#
+#this is a sample config file for your convenience
+
+0:
+  name: BOW
+1:
+  name: ARROW
+2:
+  name: IRON_SWORD
+3:
+  name: ENDER_PEARL
+4:
+  name: DIAMOND_CHESTPLATE
