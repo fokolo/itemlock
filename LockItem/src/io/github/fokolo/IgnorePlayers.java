@@ -19,8 +19,10 @@ public class IgnorePlayers {
 				if (players.containsKey(sender.getName())) {
 					players.remove(sender.getName());
 					players.put(sender.getName(), true);
+					System.out.println(sender.getName()+"true");
 				} else {
 					players.put(sender.getName(), true);
+					System.out.println(sender.getName()+"true");
 				}
 			} else {
 				if (Bukkit.getServer().getPlayer(args[0]) == null) {
@@ -30,8 +32,10 @@ public class IgnorePlayers {
 					if (players.containsKey(sender.getName())) {
 						players.remove(sender.getName());
 						players.put(args[0], true);
+						System.out.println(args[0]+"true");
 					} else {
 						players.put(args[0], true);
+						System.out.println(args[0]+"true");
 					}
 
 				}
@@ -42,8 +46,10 @@ public class IgnorePlayers {
 				if (players.containsKey(sender.getName())) {
 					players.remove(sender.getName());
 					players.put(sender.getName(), false);
+					System.out.println(sender.getName()+"false");
 				} else {
 					players.put(sender.getName(), false);
+					System.out.println(sender.getName()+"false");
 				}
 			} else {
 				if (Bukkit.getServer().getPlayer(args[0]) == null) {
@@ -53,8 +59,10 @@ public class IgnorePlayers {
 					if (players.containsKey(sender.getName())) {
 						players.remove(sender.getName());
 						players.put(args[0], false);
+						System.out.println(args[0]+"false");
 					} else {
 						players.put(args[0], false);
+						System.out.println(args[0]+"false");
 					}
 
 				}

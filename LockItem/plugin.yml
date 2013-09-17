@@ -14,5 +14,18 @@
           usage: /lock [player]
           permission: itemlock.lock
           permission-message: You don't have permissions
+    commands:
+       unlock:
+          description: Items will not lock on yourself.
+          usage: /unlock
+          permission: itemlock.unlock
+          permission-message: You don't have permissions
+    commands:
+       lock:
+          description: Items will lock on yourself.
+          usage: /lock
+          permission: itemlock.lock
+          permission-message: You don't have permissions
+    
 
     
