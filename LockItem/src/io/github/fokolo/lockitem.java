@@ -28,7 +28,6 @@ public class lockitem extends JavaPlugin {
 			String key = i.toString();
 			String cItem = getConfig().getString(key+".name");
 			items[i]=Material.getMaterial(cItem);
-			System.out.println(cItem);
 			i++;
 		}
 		

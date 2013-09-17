@@ -1,5 +1,6 @@
 package io.github.fokolo;
 
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,18 +17,20 @@ public class inventoryclicks implements Listener {
 		ItemStack item = event.getCurrentItem();
 
 		// check
-		if (event.getCurrentItem() != null) {
-			for (Material i : ids) {
-				if (i == item.getType()) {
-					{
-						event.setCancelled(true);
-						break;
+		if (event.getWhoClicked().getGameMode() != GameMode.CREATIVE) {
+			if (event.getCurrentItem() != null) {
+				for (Material i : ids) {
+					if (i == item.getType()) {
+						{
+							event.setCancelled(true);
+							break;
+						}
 					}
 				}
-			}
-			if (item.getType() == Material.STICK) {
-				if (!item.getEnchantments().isEmpty()) {
-					event.setCancelled(true);
+				if (item.getType() == Material.STICK) {
+					if (!item.getEnchantments().isEmpty()) {
+						event.setCancelled(true);
+					}
 				}
 			}
 		}
