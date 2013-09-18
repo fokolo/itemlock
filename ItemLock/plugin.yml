@@ -1,31 +1,11 @@
-    name: LockItem
-    main: io.github.fokolo.lockitem
-    version: 0.3
-    
-    commands:
-       unlock:
-          description: Items will not lock on this player.
-          usage: /unlock [player]
-          permission: itemlock.unlock
-          permission-message: You don't have permissions
-    commands:
-       lock:
-          description: Items will lock on this player.
-          usage: /lock [player]
-          permission: itemlock.lock
-          permission-message: You don't have permissions
-    commands:
-       unlock:
-          description: Items will not lock on yourself.
-          usage: /unlock
-          permission: itemlock.unlock
-          permission-message: You don't have permissions
-    commands:
-       lock:
-          description: Items will lock on yourself.
-          usage: /lock
-          permission: itemlock.lock
-          permission-message: You don't have permissions
-    
-
-    
+     name: ItemLock
+     version: 0.3
+     description: the plugin "locks" the items in place but allow them to be used. 
+     author: fokolo     
+     main: io.github.fokolo.lockitem
+     
+     commands:
+       itemlock:
+         description: itemlock root command.
+         aliases: ilock
+         usage: Syntax error! type /itemlock help.

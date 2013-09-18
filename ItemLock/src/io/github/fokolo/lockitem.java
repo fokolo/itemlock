@@ -11,11 +11,11 @@ public class lockitem extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		PluginManager pm = getServer().getPluginManager();
-		// Plugin myplugin = pm.getPlugin("LockItem");
 
 		this.saveDefaultConfig();
 		readConfig();
-
+		
+		getCommand("itemlock").setExecutor(new IgnorePlayers());
 		pm.registerEvents(new inventoryclicks(), this);
 		pm.registerEvents(new droptest(), this);
 	}

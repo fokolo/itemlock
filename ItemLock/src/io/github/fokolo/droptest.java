@@ -13,22 +13,37 @@ public class droptest implements Listener {
 	@EventHandler
 	public void PlayerDropItem(PlayerDropItemEvent event) {
 		// variables
-		Material[] ids = lockitem.items;
 		ItemStack item = event.getItemDrop().getItemStack();
 		Player p = event.getPlayer();
 
 		// check
-		if (p.getGameMode() != GameMode.CREATIVE && !IgnorePlayers.players.get(p.getName())) {
-			for (Material i : ids) {
-				if (i == item.getType()) {
+		if (IgnorePlayers.players.containsKey(p.getName())) {
+			if (p.getGameMode() != GameMode.CREATIVE
+					&& IgnorePlayers.players.get(p.getName())) {
+				lock(item, event);
+			}
+		} else {
+			if (p.getGameMode() != GameMode.CREATIVE) {
+				lock(item, event);
+			}
+		}
+
+	}
+
+	public void lock(ItemStack item, PlayerDropItemEvent event) {
+		Material[] ids = lockitem.items;
+
+		for (Material i : ids) {
+			if (i == item.getType()) {
+				{
 					event.setCancelled(true);
 					break;
 				}
 			}
-			if (item.getType() == Material.STICK) {
-				if (!item.getEnchantments().isEmpty()) {
-					event.setCancelled(true);
-				}
+		}
+		if (item.getType() == Material.STICK) {
+			if (!item.getEnchantments().isEmpty()) {
+				event.setCancelled(true);
 			}
 		}
 	}
